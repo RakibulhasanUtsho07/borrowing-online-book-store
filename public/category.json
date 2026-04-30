@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "category_name": "Fiction"
+  },
+  {
+    "id": 2,
+    "category_name": "Non-Fiction"
+  },
+  {
+    "id": 3,
+    "category_name": "Mystery & Thriller"
+  },
+  {
+    "id": 4,
+    "category_name": "Science Fiction"
+  },
+  {
+    "id": 5,
+    "category_name": "Fantasy"
+  },
+  {
+    "id": 6,
+    "category_name": "Biography"
+  },
+  {
+    "id": 7,
+    "category_name": "History"
+  },
+  {
+    "id": 8,
+    "category_name": "Self-Help"
+  },
+  {
+    "id": 9,
+    "category_name": "Romance"
+  },
+  {
+    "id": 10,
+    "category_name": "Horror"
+  }
+]
