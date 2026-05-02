@@ -1,7 +1,7 @@
 "use client"
 
-// aAqW
-import Link from "next/link"
+
+import { authClient } from "@/lib/auth-client";
 import { useForm } from "react-hook-form"
 
 function RegisterPage() {
