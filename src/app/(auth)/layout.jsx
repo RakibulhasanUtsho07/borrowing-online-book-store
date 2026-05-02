@@ -1,10 +1,11 @@
-import React from 'react'
+"use client"
 import Navbar from '../components/shared/Navbar'
 
-function AuthLayout() {
+function AuthLayout({children}) {
   return (
     <>
       <Navbar></Navbar>
+      {children}
     </>
   )
 }

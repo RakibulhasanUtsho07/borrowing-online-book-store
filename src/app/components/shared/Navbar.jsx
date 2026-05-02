@@ -38,7 +38,7 @@ function Navbar() {
                 </ul>
             </div>
             <div className="navbar-end pr-5">
-                <a className="btn bg-purple-600 text-white px-5 text-bold ">Login</a>
+                <Link href='/login' className="btn bg-purple-600 text-white px-5 text-bold ">Login</Link>
             </div>
         </div>
     )
