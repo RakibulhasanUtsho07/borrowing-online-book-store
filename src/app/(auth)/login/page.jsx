@@ -3,10 +3,18 @@
 import { FaEyeSlash } from 'react-icons/fa'
 import { useForm } from 'react-hook-form'
 import Link from 'next/link'
+import { authClient } from '@/lib/auth-client'
 
 function LoginPage() {
    const { register, handleSubmit,formState: {errors} } = useForm()
-  const handleLogin = ()=> {
+  const handleLogin =async (data)=> {
+    const  {email, password} = data
+    const { data:res, error } = await authClient.signIn.email({
+    email:email, // required
+    password: password, // required
+    rememberMe: true,
+    callbackURL: "/",
+});
 
   }
   return (
