@@ -1,5 +1,6 @@
 import LoginSection from "@/app/components/shared/LoginSection"
 import Image from "next/image"
+import Link from "next/link"
 import { FaArrowAltCircleRight, FaRegArrowAltCircleRight, FaStar } from "react-icons/fa"
 
 
@@ -300,9 +301,10 @@ async function BooksDetailsPage(props) {
                     </span>
                     <div className=" flex gap-5 mt-5">
                         <span className="btn bg-amber-400 text-white px-6 ">{book.published_year}</span>
-                        <div className="btn bg-purple-400 text-white px-6 ">
+                        {/* <div className="btn bg-purple-400 text-white px-6 ">
                             {<span>{book.language}</span>&& <span>{book.target_audience}</span>}
-                        </div>
+                        </div> */}
+                        <Link href={"/"} className="btn bg-purple-400 text-white px-6 ">Back To Home</Link>
                     </div>
 
 

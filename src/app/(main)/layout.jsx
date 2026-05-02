@@ -7,7 +7,7 @@ import TopRatedBooks from '../components/shared/TopRatedBooks'
 function MainLayout({children}) {
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar ></Navbar>
       <TopRatedBooks></TopRatedBooks>
       <Banner></Banner>
       {children}

@@ -2,22 +2,24 @@ import Image from "next/image";
 import BooksCategory from "../components/shared/Category";
 import BorrowingBooks from "../components/shared/BorrowingBooks";
 import LoginSection from "../components/shared/LoginSection";
+import { redirect } from "next/dist/server/api-utils";
 // import BooksCategory from "../components/shared/category";
 
 export default function Home() {
+  
   return (
-    <div className="grid grid-cols-12 container gap-8 mx-auto mt-10 text-left justify-between py-10">
-      <div className="  col-span-3">
+    <div className="grid grid-cols-12 container gap-8 mx-auto mt-10 text-left justify-between py-10  ">
+      <div className="  col-span-3 sticky top-10 h-fit">
         <h3 className="text-2xl font-bold mb-5">All Category</h3>
         <BooksCategory></BooksCategory>
 
       </div>
-      <div className="col-span-6  ">
+      <div className="col-span-6">
         <h3 className="text-2xl font-bold mb-5">Borrowing Books</h3>
         <BorrowingBooks></BorrowingBooks>
 
       </div>
-      <div className="col-span-3 p-2">
+      <div className="col-span-3 sticky top-10 h-fit">
         <h3 className="text-2xl font-bold mb-5">Social Login</h3>
         <LoginSection></LoginSection>
       </div>

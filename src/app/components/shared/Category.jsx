@@ -2,6 +2,8 @@ import Link from 'next/link'
 import React from 'react'
 
 function BooksCategory({activeId}) {
+  console.log(activeId, "category")
+  const currentActiveId = activeId ? Number(activeId) : 1
   const categories =  [
   {
     "id": 1,
@@ -47,7 +49,7 @@ function BooksCategory({activeId}) {
   return (
     <div className='space-y-3'>
        {
-        categories.map((category, ind)=> <Link href={`/category/${category.id}`} key={ind} className={`btn w-full rounded bg-white border border-purple-600 ${activeId === category.id ? "bg-purple-500 " :""}`}>
+        categories.map((category, ind)=> <Link href={`/category/${category.id}`} key={ind} className={`btn w-full rounded  border border-purple-600 ${currentActiveId === category.id ? "bg-purple-500 text-white" :""}`}>
             {category.category_name}
         </Link>)
        }

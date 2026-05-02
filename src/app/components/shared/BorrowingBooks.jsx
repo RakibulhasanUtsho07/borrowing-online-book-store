@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { FaStar } from 'react-icons/fa'
+import NotFoundPage from './NotFoundPage'
 const getCategory = ({ id }) => {
   console.log(id, "hello")
   //    const books =   [
@@ -253,6 +254,7 @@ const getCategory = ({ id }) => {
       categories: [
         {
           id: "bk-str-9x1",
+          category_name: "Story",
           title: "Echoes of the Forgotten",
           author: "Elena Thorne",
           available_quantity: 12,
@@ -262,6 +264,7 @@ const getCategory = ({ id }) => {
         {
           id: "bk-str-4v2",
           title: "Silicon Shadows",
+          category_name: "Story",
           author: "Marcus Vane",
           available_quantity: 25,
           image_url: "https://m.media-amazon.com/images/I/711tsLK8oEL._UF1000,1000_QL80_.jpg",
@@ -270,6 +273,7 @@ const getCategory = ({ id }) => {
         {
           id: "bk-str-8m3",
           title: "Midnight in the Archive",
+          category_name: "Story",
           author: "Julian Black",
           available_quantity: 10,
           image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6x2OQT59krvMllXs_2IP8-7KhqHofOyg4Vg&s",
@@ -278,6 +282,7 @@ const getCategory = ({ id }) => {
         {
           id: "bk-str-11k4",
           title: "Gardens of the Moon",
+          category_name: "Story",
           author: "Steven Erikson",
           available_quantity: 18,
           image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWmxcBQt9T4rClMa5_XBESLmom6TU238Emow&s",
@@ -286,6 +291,7 @@ const getCategory = ({ id }) => {
         {
           id: "bk-str-14p5",
           title: "Under the Desert Stars",
+          category_name: "Story",
           author: "Amira Al-Sayed",
           available_quantity: 9,
           image_url: "https://m.media-amazon.com/images/I/91qn841i-CL._UF1000,1000_QL80_.jpg",
@@ -294,6 +300,7 @@ const getCategory = ({ id }) => {
         {
           id: "bk-str-19z6",
           title: "The Martian Chronicles",
+          category_name: "Story",
           author: "Ray Bradbury",
           available_quantity: 22,
           image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOsRm8KPteYAD7Ix90-xL4CDbLanEYAVwwww&s",
@@ -309,6 +316,7 @@ const getCategory = ({ id }) => {
           id: "bk-tch-2a1",
           title: "Quantum Leap: Neural Networks",
           author: "Dr. Aris Thorne",
+          category_name: "Tech",
           available_quantity: 5,
           image_url: "https://media.springernature.com/w153/springer-static/cover/book/978-981-95-1683-4.jpg",
           "description": "An exhaustive exploration of the intersection between quantum computing and artificial neural networks. This book provides a comprehensive breakdown of how quantum entanglement can be leveraged to accelerate deep learning processes, potentially solving optimization problems that are currently insurmountable for classical hardware. It covers the mathematical foundations of qubits, the architecture of quantum gates, and provides practical Python-based simulations for researchers looking to stay at the forefront of the next technological revolution. Perfect for senior engineers and data scientists seeking to understand the hardware of the 2030s.",
@@ -316,6 +324,7 @@ const getCategory = ({ id }) => {
         {
           id: "bk-tch-5b2",
           title: "Edge Computing 101",
+          category_name: "Tech",
           author: "Liam Chen",
           available_quantity: 15,
           image_url: "https://m.media-amazon.com/images/I/715w3Q4XcML.jpg",
@@ -324,6 +333,7 @@ const getCategory = ({ id }) => {
         {
           id: "bk-tch-7c3",
           title: "Full Stack Mastery",
+          category_name: "Tech",
           author: "Devin Rivers",
           available_quantity: 20,
           image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLal77tRssd2TT5tk3z65KYMkJjDnAFjfVXA&s",
@@ -332,6 +342,7 @@ const getCategory = ({ id }) => {
         {
           id: "bk-tch-10d4",
           title: "The Rust Revolution",
+          category_name: "Tech",
           author: "Clara Schmidt",
           available_quantity: 7,
           image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQiiaVLehM9vcLbcbRcdQwsqJyunfW84Fm-Q&s",
@@ -340,6 +351,7 @@ const getCategory = ({ id }) => {
         {
           id: "bk-tch-13e5",
           title: "The API Design Handbook",
+          category_name: "Tech",
           author: "Sanjay Gupta",
           available_quantity: 14,
           image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUuPcigUF6lk3hikZ4l_Z2r2UY7dap-MyW-Q&s",
@@ -348,6 +360,7 @@ const getCategory = ({ id }) => {
         {
           id: "bk-tch-16f6",
           title: "Cybersecurity Threats 2026",
+          category_name: "Tech",
           author: "Kevin Mitnick",
           available_quantity: 6,
           image_url: "https://m.media-amazon.com/images/I/61j11NnRJZL._UF1000,1000_QL80_.jpg",
@@ -357,6 +370,7 @@ const getCategory = ({ id }) => {
           id: "bk-tch-18g7",
           title: "Mastering Go",
           author: "Mihalis Tsoukalos",
+          category_name: "Tech",
           available_quantity: 17,
           image_url: "https://m.media-amazon.com/images/I/714VDMA1+aL._AC_UF1000,1000_QL80_.jpg",
           "description": "Go (Golang) has become the language of choice for cloud-native development. This book guides you through the intricacies of Go's concurrency model, its powerful type system, and its minimalist philosophy. From writing efficient microservices to working with low-level system calls, this book covers it all. It includes practical examples of building high-performance CLI tools and web servers using the standard library. By the end of the book, you will have a deep understanding of Go's internals and be ready to contribute to large-scale open-source projects or build your own scalable backend systems.",
@@ -370,6 +384,7 @@ const getCategory = ({ id }) => {
         {
           id: "bk-sci-3x1",
           title: "The Biological Blueprint",
+          category_name: "Science",
           author: "Sarah Jenkins",
           available_quantity: 8,
           image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaV8zLJ75TGWpMO-Z99vckyEtncCaXn0OBuw&s",
@@ -378,6 +393,7 @@ const getCategory = ({ id }) => {
         {
           id: "bk-sci-6y2",
           title: "The Last Glacier",
+          category_name: "Science",
           author: "Dr. Helena Wu",
           available_quantity: 3,
           image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyWt55DH6bBvPRfhj4Umer5bNm5mGtOEHrPA&s",
@@ -386,6 +402,7 @@ const getCategory = ({ id }) => {
         {
           id: "bk-sci-9z3",
           title: "Astrophysics of the Void",
+          category_name: "Science",
           author: "Neil deGrasse Tyson",
           available_quantity: 30,
           image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYdnlHGXtTO-wV33PO0PPR3u8voLXOfepo_w&s",
@@ -394,6 +411,7 @@ const getCategory = ({ id }) => {
         {
           id: "bk-sci-12w4",
           title: "Neuroplasticity: Rewiring the Mind",
+          category_name: "Science",
           author: "Dr. Andrew Huberman",
           available_quantity: 40,
           image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWue4Hk-G-012XrR32eODgbSY1yqoGJ6PFWw&s",
@@ -402,6 +420,7 @@ const getCategory = ({ id }) => {
         {
           id: "bk-sci-15q5",
           title: "Principles of Deep Learning",
+          category_name: "Science",
           author: "Ian Goodfellow",
           available_quantity: 11,
           image_url: "https://m.media-amazon.com/images/I/511X0SSqYBL._AC_UF1000,1000_QL80_.jpg",
@@ -410,6 +429,7 @@ const getCategory = ({ id }) => {
         {
           id: "bk-sci-17r6",
           title: "The Song of the Forest",
+          category_name: "Science",
           author: "Oliver Sacks",
           available_quantity: 13,
           image_url: "https://m.media-amazon.com/images/I/71cRaQuU66L._AC_UF1000,1000_QL80_.jpg",
@@ -418,6 +438,7 @@ const getCategory = ({ id }) => {
         {
           id: "bk-sci-20s7",
           title: "The Chemistry of Everything",
+          category_name: "Science",
           author: "Dr. Peter Atkins",
           available_quantity: 35,
           image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3QzXSSJUuWzYP4NbWBonJH-4qxTQcEG-PbA&s",
@@ -433,13 +454,17 @@ const getCategory = ({ id }) => {
 function BorrowingBooks({ id }) {
 
   const books = getCategory({ id })
+  console.log(books,"books")
   return (
     <div className='p-2 space-y-5'>
-      {
+      { books.length === 0 ?
+       <div>
+        <NotFoundPage></NotFoundPage>
+       </div>:
         books.map((book, ind) =>
           <div key={ind} className='space-y-4'>
             <span className='flex gap-2 mb-1'>
-              <p className='font-semibold bg-green-400 text-white px-4 rounded-2xl p-1'>{book.category}</p>
+              <p className='font-semibold bg-green-400 text-white px-4 rounded-2xl p-1'>{book.category_name}</p>
               <div className='flex gap-1 bg-purple-200 px-4 p-1 rounded-2xl'>
                 <FaStar className='my-auto text-yellow-400' />
                 <p className=' font-medium'>5.00</p>
