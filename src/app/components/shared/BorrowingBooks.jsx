@@ -470,14 +470,14 @@ function BorrowingBooks({ id }) {
                 <p className=' font-medium'>5.00</p>
               </div>
             </span>
-            <h3 className='text-3xl font-bold py-5 '>{book.title}</h3>
+            <h3 className='text-3xl font-bold py-5 '>{book?.title}</h3>
             <div className='bg-blue-100 rounded '>
-              <Image className='rounded mx-auto py-5' src={book?.image_url} width={250} height={300} alt={book.title} />
+              <Image className='rounded mx-auto py-5' src={book?.image_url} width={250} height={300} alt={book?.title} />
             </div>
-            <p className='text-xl font-bold'><span>Author :</span> <span className=''>{book.author}</span></p>
-            <p > <span className='font-medium'>Available : </span> {book.available_quantity}</p>
-            <p className='line-clamp-2 pl-2'>{book.description}</p>
-            <Link href={`/bookdetails/${book.id}`} className='btn bg-amber-500 px-4 text-white'>Read More</Link>
+            <p className='text-xl font-bold'><span>Author :</span> <span className=''>{book?.author}</span></p>
+            <p > <span className='font-medium'>Available : </span> {book?.available_quantity}</p>
+            <p className='line-clamp-2 pl-2'>{book?.description}</p>
+            <Link href={`/bookdetails/${book?.id}`} className='btn bg-amber-500 px-4 text-white'>Read More</Link>
 
 
             <hr className='border  border-gray-400 mb-10' />

@@ -1,8 +1,25 @@
+"use client"
 import Link from 'next/link'
 import React from 'react'
 import NavLink from './NavLink'
+import { authClient } from '@/lib/auth-client'
+import { useRouter } from 'next/navigation'
+import userAvatar from "@/assets/user.png"
 
 function Navbar() {
+    const { data: session } = authClient.useSession()
+    const user = session?.user
+    console.log(user, "user")
+    const handleLogout = async () => {
+        await authClient.signOut({
+            fetchOptions: {
+                onSuccess: () => {
+                    router.push("/login"); // router use korle
+                },
+            },
+        });
+    }
+
     const links =
         <>
             <li>
@@ -18,7 +35,7 @@ function Navbar() {
 
     return (
 
-        <div className="navbar bg-base-100 shadow-sm">
+        <div className="navbar bg-base-100 shadow-sm sticky">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -37,9 +54,12 @@ function Navbar() {
                     {links}
                 </ul>
             </div>
-            <div className="navbar-end pr-5">
-                <Link href='/login' className="btn bg-purple-600 text-white px-5 text-bold ">Login</Link>
-            </div>
+            {user ? <div className="navbar-end pr-5">
+                <button onClick={handleLogout} className="btn bg-purple-600 text-white px-5 text-bold ">Logout</button>
+            </div> :
+                <div className="navbar-end pr-5">
+                    <Link href="/login"  className="btn bg-purple-600 text-white px-5 text-bold ">Login</Link>
+                </div>}
         </div>
     )
 }
