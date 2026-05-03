@@ -10,7 +10,9 @@ function MainLayout({children}) {
       <Navbar ></Navbar>
       <TopRatedBooks></TopRatedBooks>
       <Banner></Banner>
-      {children}
+      <div className='animate__animated animate__fadeIn animate__faster'>
+         {children}
+      </div>
     </>
   )
 }

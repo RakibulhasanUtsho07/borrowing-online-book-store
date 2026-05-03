@@ -47,11 +47,11 @@ function BooksCategory({activeId}) {
   }
 ]
   return (
-    <div className='space-y-3'>
+    <div className='space-y-3 animate__animated animate__fadeInLeft'>
        {
-        categories.map((category, ind)=> <Link href={`/category/${category.id}`} key={ind} className={`btn w-full rounded  border border-purple-600 ${currentActiveId === category.id ? "bg-purple-500 text-white" :""}`}>
+        categories.map((category, ind)=> <Link href={`/category/${category.id}`} key={ind} className={`btn w-full rounded  border border-purple-600 hover:animate__animated hover:animate__pulse cursor-pointer ${currentActiveId === category.id ? "bg-purple-500 text-white" :""}`}>
             {category.category_name}
-        </Link>)
+        </Link>) 
        }
     </div>
   )

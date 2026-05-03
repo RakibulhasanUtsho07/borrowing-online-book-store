@@ -26,7 +26,7 @@ function TopRatedBooks() {
     }
   ]
   return (
-    <div className='container mx-auto mt-10sz p-3 mt-10 bg-[#f7f7f7]  rounded'>
+    <div className='container mx-auto mt-10sz p-3 mt-10 bg-[#f7f7f7]  rounded animate__animated animate__fadeInUp'>
       <Marquee>
        <div className='flex  gap-20'>
          {

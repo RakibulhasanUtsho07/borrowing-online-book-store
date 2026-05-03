@@ -1,4 +1,5 @@
 import LoginSection from "@/app/components/shared/LoginSection"
+import SocialMedia from "@/app/components/shared/SocialMedia"
 import Image from "next/image"
 import Link from "next/link"
 import { FaArrowAltCircleRight, FaRegArrowAltCircleRight, FaStar } from "react-icons/fa"
@@ -294,7 +295,7 @@ async function BooksDetailsPage(props) {
                     </span>
                     <h2 className="text-3xl font-bold">{book.title}</h2>
                     <h4 className="mb-5"><span className="text-xl font-semibold">Author : </span><span className="font-medium"> {book.author}</span></h4>
-                    <p className="text-[16px] leading-6">{book.description}</p>
+                    <p className="text-[16px] leading-6 animate__animated animate__fadeInUp">{book.description}</p>
                     <span className="flex gap-1 mt-5">
                         <FaRegArrowAltCircleRight className="text-green-400 my-auto" />
                         <p className="text-xl font-medium">In Stock( {book.available_quantity} copies available)</p>
@@ -304,7 +305,7 @@ async function BooksDetailsPage(props) {
                         {/* <div className="btn bg-purple-400 text-white px-6 ">
                             {<span>{book.language}</span>&& <span>{book.target_audience}</span>}
                         </div> */}
-                        <Link href={"/"} className="btn bg-purple-400 text-white px-6 ">Back To Home</Link>
+                        <Link href={"/"} className="btn bg-purple-400 text-white px-6 animate__animated animate__pulse animate__infinite">Back To Home</Link>
                     </div>
 
 
@@ -314,6 +315,7 @@ async function BooksDetailsPage(props) {
             </div>
             <div className="col-span-3">
                 <LoginSection></LoginSection>
+                <SocialMedia></SocialMedia>
 
             </div>
 

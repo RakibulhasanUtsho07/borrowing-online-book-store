@@ -284,33 +284,33 @@ function AllBooksPage() {
             <SearchSection  books={books} setDisplayBooks={setDisplayBooks} ></SearchSection>
         </div>
 
-     <div className='container mx-auto mt-15 grid grid-cols-3 gap-5 space-y-6'>
+     <div className='container mx-auto mt-15 grid grid-cols-3 gap-5 space-y-6 animate__animated animate__fadeInUp animate__fast'>
        { 
         displayBooks.length > 0 ? (
              displayBooks.map((book, ind)=> <div className='space-y-4' key={ind}>
           
           <div className='w-[350px] bg-blue-100 rounded-2xl border border-gray-200'>
-            <Image className='mx-auto rounded h-[300px] p-5' src={book.image_url} width={200} height={300} alt={book.title}/>
+            <Image className='mx-auto rounded h-[300px] p-5 animate__animated animate__zoomIn' src={book.image_url} width={200} height={300} alt={book.title}/>
           </div>
           <div className='mx-auto pl-2'>
-            <h3 className='text-2xl font-semibold'>{book.title}</h3>
-            <h4 className='text-xl font-medium '>{book.author}</h4>
+            <h3 className='text-2xl font-semibold animate__animated animate__slideInLeft'>{book.title}</h3>
+            <h4 className='text-xl font-medium animate__animated animate__slideInLeft'>{book.author}</h4>
             <div className='flex gap-10 mt-5'>
-              <button className='text-white btn bg-green-500 px-5'>Borrow Now</button>
-              <Link href={`/bookdetails/${book.id}`} className='text-white btn bg-amber-400 px-5'>Read More</Link>
+              <button className='text-white btn bg-green-500 px-5 animate__animated animate__pulse animate__infinite'>Borrow Now</button>
+              <Link href={`/bookdetails/${book.id}`} className='text-white btn bg-amber-400 px-5 animate__animated animate__pulse animate__infinite'>Read More</Link>
             </div>
           </div>
         </div>)
         ) : (<div className="col-span-full flex flex-col items-center justify-center py-20 text-center">
         <div className="text-6xl mb-4">🔍</div>
         <h2 className="text-3xl font-bold text-gray-700">No Books Found</h2>
-        <p className="text-gray-500 mt-2 text-lg">
+        <p className="text-gray-500 mt-2 text-lg ">
             We couldn't find any books matching your search. <br />
             Please try using different keywords or check your spelling.
         </p>
         <button 
             onClick={() => setDisplayBooks(getAllBooks())} 
-            className="btn btn-outline btn-neutral mt-6"
+            className="btn btn-outline btn-neutral mt-6 animate__animated animate__pulse animate__infinite"
         >
             Clear Search & Show All
         </button>
