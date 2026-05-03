@@ -26,12 +26,12 @@ function TopRatedBooks() {
     }
   ]
   return (
-    <div className='container mx-auto p-3 bg-green-500 mt-10 rounded'>
+    <div className='container mx-auto mt-10sz p-3 mt-10 bg-[#f7f7f7]  rounded'>
       <Marquee>
-       <div className='flex gap-20 '>
+       <div className='flex  gap-20'>
          {
-            topBooks.map((book, ind) => <span key={ind} className='mr-10'>
-              <p ><span className='text-xl font-bold '>{book.highlight.split(":")[0]} </span>:<span className='text-[16px] text-white'> {book.highlight.split(":")[1]}</span></p>
+            topBooks.map((book, ind) => <span key={ind} className=''>
+              <p className='mx-10' ><span className='text-xl font-bold text-green-300 '>{book.highlight.split(":")[0]} :</span><span className='text-[16px] text-[#333333]'> {book.highlight.split(":")[1]}</span></p>
             </span>)
         }
        </div>

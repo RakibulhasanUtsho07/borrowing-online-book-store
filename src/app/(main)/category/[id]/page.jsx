@@ -2,6 +2,8 @@ import BorrowingBooks from '@/app/components/shared/BorrowingBooks'
 import BooksCategory from '@/app/components/shared/Category'
 import LoginSection from '@/app/components/shared/LoginSection'
 import SocialMedia from '@/app/components/shared/SocialMedia'
+import TopRatedAuthors from '@/app/components/shared/TopRatedAuthors'
+import TopReatedAuthors from '@/app/components/shared/TopRatedAuthors'
 import React from 'react'
 
 async function DivideByCategory(props) {
@@ -262,10 +264,17 @@ async function DivideByCategory(props) {
         <BorrowingBooks id={id}></BorrowingBooks>
 
       </div>
-      <div className="col-span-3 p-2 sticky top-10 h-fit">
-        <h3 className="text-2xl font-bold mb-5">Social Login</h3>
-        <LoginSection></LoginSection>
-        <SocialMedia ></SocialMedia>
+      <div className="col-span-3 p-2  sticky top-10 h-fit">
+        <div className=''>
+          <h3 className="text-2xl  font-bold mb-5">Social Login</h3>
+        <LoginSection ></LoginSection>
+        <SocialMedia  ></SocialMedia>
+        </div>
+        <div>
+          <h3 className='text-3xl font-bold my-10'>Top Rated Authors</h3>
+          <TopRatedAuthors></TopRatedAuthors>
+        </div>
+
       </div>
     </div>
   )

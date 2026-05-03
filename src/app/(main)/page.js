@@ -3,6 +3,8 @@ import BooksCategory from "../components/shared/Category";
 import BorrowingBooks from "../components/shared/BorrowingBooks";
 import LoginSection from "../components/shared/LoginSection";
 import { redirect } from "next/dist/server/api-utils";
+import SocialMedia from "../components/shared/SocialMedia";
+import TopRatedAuthors from "../components/shared/TopRatedAuthors";
 // import BooksCategory from "../components/shared/category";
 
 export default function Home() {
@@ -19,9 +21,17 @@ export default function Home() {
         <BorrowingBooks></BorrowingBooks>
 
       </div>
-      <div className="col-span-3 sticky top-10 h-fit">
-        <h3 className="text-2xl font-bold mb-5">Social Login</h3>
-        <LoginSection></LoginSection>
+      <div className="col-span-3 p-2  sticky top-10 h-fit">
+        <div className=''>
+          <h3 className="text-2xl  font-bold mb-5">Social Login</h3>
+        <LoginSection ></LoginSection>
+        <SocialMedia  ></SocialMedia>
+        </div>
+        <div>
+          <h3 className='text-3xl font-bold my-10'>Top Rated Authors</h3>
+          <TopRatedAuthors></TopRatedAuthors>
+        </div>
+
       </div>
     </div>
   );
