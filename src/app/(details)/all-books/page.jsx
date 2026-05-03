@@ -1,6 +1,10 @@
+"use client"
+import SearchSection from '@/app/components/shared/SearchSection'
+import { allTasks } from 'better-auth/react'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import { useState } from 'react'
+
 const getAllBooks = () => {
     const books = [
         {
@@ -268,13 +272,22 @@ const getAllBooks = () => {
 }
 
 function AllBooksPage() {
-  const books = getAllBooks()
+    const books = getAllBooks()
+    const [displayBooks, setDisplayBooks] = useState(books)
+  
+  
+
+
   return (
     <div >
+        <div className='container mx-auto'>
+            <SearchSection  books={books} setDisplayBooks={setDisplayBooks} ></SearchSection>
+        </div>
 
      <div className='container mx-auto mt-15 grid grid-cols-3 gap-5 space-y-6'>
-       {
-        books.map((book, ind)=> <div className='space-y-4' key={ind}>
+       { 
+        displayBooks.length > 0 ? (
+             displayBooks.map((book, ind)=> <div className='space-y-4' key={ind}>
           
           <div className='w-[350px] bg-blue-100 rounded-2xl border border-gray-200'>
             <Image className='mx-auto rounded h-[300px] p-5' src={book.image_url} width={200} height={300} alt={book.title}/>
@@ -288,6 +301,20 @@ function AllBooksPage() {
             </div>
           </div>
         </div>)
+        ) : (<div className="col-span-full flex flex-col items-center justify-center py-20 text-center">
+        <div className="text-6xl mb-4">🔍</div>
+        <h2 className="text-3xl font-bold text-gray-700">No Books Found</h2>
+        <p className="text-gray-500 mt-2 text-lg">
+            We couldn't find any books matching your search. <br />
+            Please try using different keywords or check your spelling.
+        </p>
+        <button 
+            onClick={() => setDisplayBooks(getAllBooks())} 
+            className="btn btn-outline btn-neutral mt-6"
+        >
+            Clear Search & Show All
+        </button>
+    </div>)
       }
      </div>
       
