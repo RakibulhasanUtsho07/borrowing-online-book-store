@@ -1,8 +1,11 @@
 import LoginSection from "@/app/components/shared/LoginSection"
 import SocialMedia from "@/app/components/shared/SocialMedia"
+import { authClient } from "@/lib/auth-client"
+import { redirect } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import { FaArrowAltCircleRight, FaRegArrowAltCircleRight, FaStar } from "react-icons/fa"
+import { headers } from "next/headers"
 
 
 const getBookDetailsBYId = (id) => {
@@ -272,17 +275,27 @@ const getBookDetailsBYId = (id) => {
 }
 
 async function BooksDetailsPage(props) {
+    const { data: session } = await authClient.getSession({
+        fetchOptions:{
+            headers: await headers()
+        }
+    })
+    const user = session?.user
+    if(!user){
+        redirect('/login')
+    }
     const params = await props.params
     const id = params.id
     console.log(id, "rakib")
     const book = getBookDetailsBYId(id)
+    
 
 
     return (
         <div className="grid grid-cols-12 container gap-8 mx-auto mt-15 py-5">
             <div className="col-span-9 flex gap-5 ">
                 <div className="bg-blue-50 mx-auto flex-1 ">
-                    <Image className='rounded mx-auto my-auto py-5' src={book.image_url} width={200} height={400} alt={book.title} />
+                    <Image className='rounded-xl mx-auto my-auto py-5' src={book.image_url} width={200} height={400} alt={book.title} />
 
                 </div>
                 <div className="flex-2 p-3 ">

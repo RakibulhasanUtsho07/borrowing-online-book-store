@@ -10,6 +10,7 @@ function Navbar() {
     const { data: session } = authClient.useSession()
     const user = session?.user
     console.log(user, "user")
+    const router = useRouter()
     const handleLogout = async () => {
         await authClient.signOut({
             fetchOptions: {
@@ -58,7 +59,7 @@ function Navbar() {
                 <button onClick={handleLogout} className="btn bg-purple-600 text-white px-5 text-bold ">Logout</button>
             </div> :
                 <div className="navbar-end pr-5">
-                    <Link href="/login"  className="btn bg-purple-600 text-white px-5 text-bold ">Login</Link>
+                    <button   className="btn bg-purple-600 text-white px-5 text-bold ">Login</button>
                 </div>}
         </div>
     )

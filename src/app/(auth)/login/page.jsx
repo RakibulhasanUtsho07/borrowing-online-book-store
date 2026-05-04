@@ -39,7 +39,7 @@ function LoginPage() {
               className="input"
               placeholder="Type here" />
               {errors.password && <p className='text-xs text-red-500'>{errors.password.message}</p>}
-              <FaEyeSlash />
+              
           </fieldset>
           <button className='btn bg-purple-700 w-full text-white mt-3'> Login </button>
         </form>
