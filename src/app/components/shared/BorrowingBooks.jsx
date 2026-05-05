@@ -12,7 +12,7 @@ export const dynamic = 'force-dynamic';
   useEffect(()=>{
     const getCategory = async () =>{
       try{
-        const res = await fetch(`${window.location.origin}/books.json`)
+        const res = await fetch(`${window.location.origin}/books.json`,{cache : "no-store"})
       const categories = await res.json()
       const singleCategory = categories.find(category => category.category_id === Number(id))
       if(singleCategory){
