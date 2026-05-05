@@ -6,7 +6,7 @@ import { redirect } from "next/dist/server/api-utils";
 import SocialMedia from "../components/shared/SocialMedia";
 import TopRatedAuthors from "../components/shared/TopRatedAuthors";
 import MobileBorrowingBooks from "../components/shared/MobileBorrowingBooks";
-// import BooksCategory from "../components/shared/category";
+
 
 export default function Home() {
   

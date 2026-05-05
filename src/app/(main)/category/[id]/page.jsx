@@ -251,8 +251,7 @@ async function DivideByCategory(props) {
 ]
   const params = await props.params
   const id =  params.id
-  // const categoryName =  params.category_name
-  // console.log(categoryName,id, "Rakib Category")
+ 
   return (
     <div className='bg-gray-50 min-h-screen'>
       <div className="grid grid-cols-1 md:grid-cols-12  container md:gap-8 mx-auto px-4 mt-5 md:mt-10 py-10">

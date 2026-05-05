@@ -12,7 +12,7 @@ export const dynamic = 'force-dynamic';
   useEffect(()=>{
     const getCategory = async () =>{
       try{
-        const res = await fetch(`https://borrowing-online-book-store-bf26-8j82h13zh.vercel.app//books.json`,{cache : "no-store"})
+        const res = await fetch(`/books.json`,{cache : "no-store"})
       const categories = await res.json()
       const singleCategory = categories.find(category => category.category_id === Number(id))
       if(singleCategory){

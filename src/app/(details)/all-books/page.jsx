@@ -2,7 +2,7 @@
 
 import FilterBooksByCategory from '@/app/components/shared/FilterBooksByCategory'
 import SearchSection from '@/app/components/shared/SearchSection'
-import { allTasks } from 'better-auth/react'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
