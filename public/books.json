@@ -1,0 +1,200 @@
+[
+  {
+    "category_id": 1,
+    "category_name": "Story",
+    "categories": [
+      {
+        "id": "bk-str-9x1",
+        "category_name": "Story",
+        "title": "Echoes of the Forgotten",
+        "author": "Elena Thorne",
+        "available_quantity": 12,
+        "image_url": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1691569088i/195972975.jpg",
+        "description": "In a world where memories are traded like currency, a young archivist discovers a hidden vault containing the lost history of a civilization that supposedly never existed. As she delves deeper into the forbidden records, she realizes that her own past is intricately tied to the collapse of the old world."
+      },
+      {
+        "id": "bk-str-4v2",
+        "title": "Silicon Shadows",
+        "category_name": "Story",
+        "author": "Marcus Vane",
+        "available_quantity": 25,
+        "image_url": "https://m.media-amazon.com/images/I/711tsLK8oEL._UF1000,1000_QL80_.jpg",
+        "description": "Set in a neon-drenched metropolis, this cyberpunk thriller follows a freelance 'data-specter' who specializes in retrieving deleted information from the digital afterlife."
+      },
+      {
+        "id": "bk-str-8m3",
+        "title": "Midnight in the Archive",
+        "category_name": "Story",
+        "author": "Julian Black",
+        "available_quantity": 10,
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6x2OQT59krvMllXs_2IP8-7KhqHofOyg4Vg&s",
+        "description": "A gothic mystery set in a sprawling, infinite library where the books are said to whisper to those who listen long enough."
+      },
+      {
+        "id": "bk-str-11k4",
+        "title": "Gardens of the Moon",
+        "category_name": "Story",
+        "author": "Steven Erikson",
+        "available_quantity": 18,
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWmxcBQt9T4rClMa5_XBESLmom6TU238Emow&s",
+        "description": "A sprawling epic fantasy that introduces readers to the Malazan Empire, a world of complex magic, ancient gods, and war-weary soldiers."
+      },
+      {
+        "id": "bk-str-14p5",
+        "title": "Under the Desert Stars",
+        "category_name": "Story",
+        "author": "Amira Al-Sayed",
+        "available_quantity": 9,
+        "image_url": "https://m.media-amazon.com/images/I/91qn841i-CL._UF1000,1000_QL80_.jpg",
+        "description": "A multi-generational saga set in the heart of the Arabian Peninsula, tracing the lives of a family of nomadic bedouins."
+      },
+      {
+        "id": "bk-str-19z6",
+        "title": "The Martian Chronicles",
+        "category_name": "Story",
+        "author": "Ray Bradbury",
+        "available_quantity": 22,
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOsRm8KPteYAD7Ix90-xL4CDbLanEYAVwwww&s",
+        "description": "A classic of science fiction that tells the story of humanity's repeated attempts to colonize Mars."
+      }
+    ]
+  },
+  {
+    "category_id": 2,
+    "category_name": "Tech",
+    "categories": [
+      {
+        "id": "bk-tch-2a1",
+        "title": "Quantum Leap: Neural Networks",
+        "author": "Dr. Aris Thorne",
+        "category_name": "Tech",
+        "available_quantity": 5,
+        "image_url": "https://media.springernature.com/w153/springer-static/cover/book/978-981-95-1683-4.jpg",
+        "description": "An exhaustive exploration of the intersection between quantum computing and artificial neural networks."
+      },
+      {
+        "id": "bk-tch-5b2",
+        "title": "Edge Computing 101",
+        "category_name": "Tech",
+        "author": "Liam Chen",
+        "available_quantity": 15,
+        "image_url": "https://m.media-amazon.com/images/I/715w3Q4XcML.jpg",
+        "description": "As the Internet of Things (IoT) expands, the need for processing power at the 'edge' of the network becomes critical."
+      },
+      {
+        "id": "bk-tch-7c3",
+        "title": "Full Stack Mastery",
+        "category_name": "Tech",
+        "author": "Devin Rivers",
+        "available_quantity": 20,
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLal77tRssd2TT5tk3z65KYMkJjDnAFjfVXA&s",
+        "description": "A modern guide to becoming a proficient full-stack developer in the current ecosystem using React, Node.js, and PostgreSQL."
+      },
+      {
+        "id": "bk-tch-10d4",
+        "title": "The Rust Revolution",
+        "category_name": "Tech",
+        "author": "Clara Schmidt",
+        "available_quantity": 7,
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQiiaVLehM9vcLbcbRcdQwsqJyunfW84Fm-Q&s",
+        "description": "An in-depth look at why the Rust programming language is taking the software world by storm."
+      },
+      {
+        "id": "bk-tch-13e5",
+        "title": "The API Design Handbook",
+        "category_name": "Tech",
+        "author": "Sanjay Gupta",
+        "available_quantity": 14,
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUuPcigUF6lk3hikZ4l_Z2r2UY7dap-MyW-Q&s",
+        "description": "Designing a great API is more of an art than a science. This book covers principles of RESTful design, GraphQL, and gRPC."
+      },
+      {
+        "id": "bk-tch-16f6",
+        "title": "Cybersecurity Threats 2026",
+        "category_name": "Tech",
+        "author": "Kevin Mitnick",
+        "available_quantity": 6,
+        "image_url": "https://m.media-amazon.com/images/I/61j11NnRJZL._UF1000,1000_QL80_.jpg",
+        "description": "A forward-looking analysis of the evolving threat landscape, focusing on AI-driven phishing and deepfakes."
+      },
+      {
+        "id": "bk-tch-18g7",
+        "title": "Mastering Go",
+        "author": "Mihalis Tsoukalos",
+        "category_name": "Tech",
+        "available_quantity": 17,
+        "image_url": "https://m.media-amazon.com/images/I/714VDMA1+aL._AC_UF1000,1000_QL80_.jpg",
+        "description": "Go (Golang) has become the language of choice for cloud-native development. This book guides you through the intricacies of Go."
+      }
+    ]
+  },
+  {
+    "category_id": 3,
+    "category_name": "Science",
+    "categories": [
+      {
+        "id": "bk-sci-3x1",
+        "title": "The Biological Blueprint",
+        "category_name": "Science",
+        "author": "Sarah Jenkins",
+        "available_quantity": 8,
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaV8zLJ75TGWpMO-Z99vckyEtncCaXn0OBuw&s",
+        "description": "A deep dive into the recent breakthroughs in CRISPR technology and synthetic biology."
+      },
+      {
+        "id": "bk-sci-6y2",
+        "title": "The Last Glacier",
+        "category_name": "Science",
+        "author": "Dr. Helena Wu",
+        "available_quantity": 3,
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyWt55DH6bBvPRfhj4Umer5bNm5mGtOEHrPA&s",
+        "description": "A hauntingly beautiful photographic and scientific record of the world's vanishing ice caps."
+      },
+      {
+        "id": "bk-sci-9z3",
+        "title": "Astrophysics of the Void",
+        "category_name": "Science",
+        "author": "Neil deGrasse Tyson",
+        "available_quantity": 30,
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYdnlHGXtTO-wV33PO0PPR3u8voLXOfepo_w&s",
+        "description": "A fascinating journey into the heart of black holes, dark matter, and the vast emptiness of the cosmos."
+      },
+      {
+        "id": "bk-sci-12w4",
+        "title": "Neuroplasticity: Rewiring the Mind",
+        "category_name": "Science",
+        "author": "Dr. Andrew Huberman",
+        "available_quantity": 40,
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWue4Hk-G-012XrR32eODgbSY1yqoGJ6PFWw&s",
+        "description": "Provides practical protocols for improving focus, memory, and emotional regulation by leveraging the brain's inherent ability to reorganize."
+      },
+      {
+        "id": "bk-sci-15q5",
+        "title": "Principles of Deep Learning",
+        "category_name": "Science",
+        "author": "Ian Goodfellow",
+        "available_quantity": 11,
+        "image_url": "https://m.media-amazon.com/images/I/511X0SSqYBL._AC_UF1000,1000_QL80_.jpg",
+        "description": "The definitive textbook on deep learning, covering mathematical and conceptual foundations of neural networks."
+      },
+      {
+        "id": "bk-sci-17r6",
+        "title": "The Song of the Forest",
+        "category_name": "Science",
+        "author": "Oliver Sacks",
+        "available_quantity": 13,
+        "image_url": "https://m.media-amazon.com/images/I/71cRaQuU66L._AC_UF1000,1000_QL80_.jpg",
+        "description": "A collection of essays exploring the profound connection between the human brain and the natural world."
+      },
+      {
+        "id": "bk-sci-20s7",
+        "title": "The Chemistry of Everything",
+        "category_name": "Science",
+        "author": "Dr. Peter Atkins",
+        "available_quantity": 35,
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3QzXSSJUuWzYP4NbWBonJH-4qxTQcEG-PbA&s",
+        "description": "Engaging introduction to chemistry, explaining the fundamental chemical reactions that govern our daily lives."
+      }
+    ]
+  }
+]

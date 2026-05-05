@@ -20,6 +20,26 @@ function Navbar() {
             },
         });
     }
+    const smallLinks = 
+    <>
+     <li>
+                <NavLink href={"/"}>Home</NavLink>
+            </li>
+            <li>
+                <NavLink href={"/all-books"}>All Books</NavLink>
+            </li>
+            <li>
+                <NavLink href={"/my-profile"}>My Profile</NavLink>
+            </li>
+            <li>
+                {user ? <div className="navbar-end pr-5">
+                <button onClick={handleLogout} >Logout</button>
+            </div> :
+                <div className="navbar-end pr-5">
+                    <Link href="/login"  >Login</Link>
+                </div>}
+            </li>
+    </>
 
     const links =
         <>
@@ -36,7 +56,7 @@ function Navbar() {
 
     return (
 
-        <div className="navbar bg-base-100 shadow-sm sticky">
+        <div className="navbar bg-base-100  z-100  shadow-sm sticky ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -44,8 +64,8 @@ function Navbar() {
                     </div>
                     <ul
                         tabIndex="-1"
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        {links}
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box  mt-3 w-52 p-2 shadow">
+                        {smallLinks }
                     </ul>
                 </div>
                 <Link href={"/"} className="  text-3xl font-bold text-emerald-600 bg-emerald-50 p-2  rounded-2xl ml-5">BORROWING<span className='text-sm text-emerald-400 '>BOOK</span></Link>
@@ -55,12 +75,18 @@ function Navbar() {
                     {links}
                 </ul>
             </div>
-            {user ? <div className="navbar-end pr-5">
-                <button onClick={handleLogout} className="btn bg-purple-600 text-white px-5 text-bold ">Logout</button>
+           
+            
+             {user ? <div className="navbar-end hidden md:flex flex gap-3 pr-5">
+                <p className='text-xl font-medium'>{user?.name}</p>
+                <button onClick={handleLogout} className="btn  bg-purple-600 text-white px-5 text-bold ">Logout</button>
             </div> :
-                <div className="navbar-end pr-5">
-                    <button   className="btn bg-purple-600 text-white px-5 text-bold ">Login</button>
+                <div className="navbar-end hidden md:flex flex gap-3 pr-5">
+                    <p className='text-xl font-medium'>{user?.name}</p>
+                    <Link href={"/login"}  className="btn bg-purple-600    text-white px-5 text-bold ">Login</Link>
                 </div>}
+          
+            
         </div>
     )
 }

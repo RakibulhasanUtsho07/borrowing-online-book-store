@@ -1,18 +1,11 @@
+import Image from 'next/image'
+import React from 'react'
+import { FaStar } from 'react-icons/fa'
+import NotFoundPage from './NotFoundPage'
+import Link from 'next/link'
 
-import LoginSection from "@/app/components/shared/LoginSection"
-import SocialMedia from "@/app/components/shared/SocialMedia"
-import { authClient } from "@/lib/auth-client"
-import { redirect } from "next/navigation"
-import Image from "next/image"
-import Link from "next/link"
-import { FaArrowAltCircleRight, FaRegArrowAltCircleRight, FaStar } from "react-icons/fa"
-import { headers } from "next/headers"
-import { IoCartOutline, IoHomeOutline } from "react-icons/io5"
-
-
-
-const getBookDetailsById = async (id) => {
-    const books = [
+function MobileBorrowingBooks() {
+    const books =[
         {
             "id": "bk-str-9x1",
             "title": "Echoes of the Forgotten",
@@ -272,79 +265,38 @@ const getBookDetailsById = async (id) => {
             "target_audience": "General Public"
         }
     ]
-
-    console.log(id, "hi")
-    const ExpectedBookDetails = books.find(book => book.id === id)
-    return ExpectedBookDetails
-}
-
-export default async function BooksDetailsPage(props) {
-    const { data: session } = await authClient.getSession({
-        fetchOptions: {
-            headers: await headers()
-        }
-    })
-    const user = session?.user
-    if (!user) {
-        redirect('/login')
-    }
-    const params = await props.params
-    const id = params.id
-    console.log(id, "rakib")
-    const book = await getBookDetailsById(id)
-
-
-
-    return (
-        <div className="grid grid-cols-1 md:grid-cols-12 container gap-8 mx-auto mt-15 py-5">
-            <div className="md:col-span-9 flex flex-col lg:flex-row gap-5 ">
-                <div className="bg-blue-50 mx-auto flex-1 ">
-                    <Image className='rounded-xl mx-auto my-auto py-5' src={book?.image_url} width={200} height={400} alt={book?.title} />
-
+  return (
+    <div className='p-2 space-y-5'>
+          { books.length === 0 ?
+           <div>
+            <NotFoundPage></NotFoundPage>
+           </div>:
+            books.map((book, ind) =>
+              <div key={ind} className='space-y-4'>
+                <span className='flex gap-2 mb-1'>
+                  <p className='font-semibold bg-green-400 text-white px-4 rounded-2xl p-1'>{book.category}</p>
+                  <div className='flex gap-1 bg-purple-200 px-4 p-1 rounded-2xl'>
+                    <FaStar className='my-auto text-yellow-400' />
+                    <p className=' font-medium'>5.00</p>
+                  </div>
+                </span>
+                <h3 className='text-3xl font-bold py-5 '>{book?.title}</h3>
+                <div className='bg-blue-100 rounded '>
+                  <Image className='rounded mx-auto py-5' src={book?.image_url} width={250} height={300} alt={book?.title} />
                 </div>
-                <div className="flex-2 p-3 ">
-                    <span className='flex gap-2 mb-4'>
-                        <p className='font-semibold bg-green-400 text-white px-4 rounded-2xl p-1'>{book?.category}</p>
-                        <div className='flex gap-1 bg-purple-200 px-4 p-1 rounded-2xl'>
-                            <FaStar className='my-auto text-yellow-400' />
-                            <p className=' font-medium'>5.00</p>
-                        </div>
-                    </span>
-                    <h2 className="text-3xl font-bold">{book?.title}</h2>
-                    <h4 className="mb-5"><span className="text-xl font-semibold">Author : </span><span className="font-medium"> {book?.author}</span></h4>
-                    <p className="text-[16px] leading-6 animate__animated animate__fadeInUp">{book?.description}</p>
-                    <span className="flex gap-1 mt-5">
-                        <FaRegArrowAltCircleRight className="text-green-400 my-auto" />
-                        <p className="text-xl font-medium">In Stock( {book?.available_quantity} copies available)</p>
-                    </span>
-                    <div className=" flex gap-5 mt-5">
-                        <div className=" flex gap-2 btn bg-amber-400 text-white px-6 animate__animated animate__pulse animate__infinite">
-                            <IoCartOutline size={22} className="text-white my-auto" />
-                            <span className=" text-white  ">Borrow Now</span>
-                        
-
-                        </div>
-
-                        <Link href={"/"} className="btn bg-purple-400 text-white px-6 animate__animated animate__pulse animate__infinite flex gap-2">
-                            <IoHomeOutline size={22} className='my-auto text-white' />
-                            <span>Back To Home</span>
-                        </Link>
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-            <div className="md:col-span-3">
-                <LoginSection></LoginSection>
-                <SocialMedia></SocialMedia>
-
-            </div>
-
+                <p className='text-xl font-bold'><span>Author :</span> <span className=''>{book?.author}</span></p>
+                <p > <span className='font-medium'>Available : </span> {book?.available_quantity}</p>
+                <p className='line-clamp-2 pl-2'>{book?.description}</p>
+                <Link href={`/bookdetails/${book?.id}`} className='btn bg-amber-500 px-4 text-white'>Read More</Link>
+    
+    
+                <hr className='border  border-gray-400 mb-10' />
+              </div>
+    
+            )
+          }
         </div>
-    )
+  )
 }
 
-
+export default MobileBorrowingBooks

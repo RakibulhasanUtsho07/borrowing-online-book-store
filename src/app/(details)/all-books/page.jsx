@@ -1,9 +1,13 @@
 "use client"
+
+import FilterBooksByCategory from '@/app/components/shared/FilterBooksByCategory'
 import SearchSection from '@/app/components/shared/SearchSection'
 import { allTasks } from 'better-auth/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
+import { FiBookOpen } from 'react-icons/fi'
+import { IoCartOutline } from 'react-icons/io5'
 
 const getAllBooks = () => {
     const books = [
@@ -266,60 +270,70 @@ const getAllBooks = () => {
             "target_audience": "General Public"
         }
     ]
-    
-    
+
+
     return books
 }
 
 function AllBooksPage() {
     const books = getAllBooks()
     const [displayBooks, setDisplayBooks] = useState(books)
-  
-  
 
 
-  return (
-    <div >
-        <div className='container mx-auto'>
-            <SearchSection  books={books} setDisplayBooks={setDisplayBooks} ></SearchSection>
-        </div>
 
-     <div className='container mx-auto mt-15 grid grid-cols-3 gap-5 space-y-6 animate__animated animate__fadeInUp animate__fast'>
-       { 
-        displayBooks.length > 0 ? (
-             displayBooks.map((book, ind)=> <div className='space-y-4' key={ind}>
-          
-          <div className='w-[350px] bg-blue-100 rounded-2xl border border-gray-200'>
-            <Image className='mx-auto rounded h-[300px] p-5 animate__animated animate__zoomIn' src={book.image_url} width={200} height={300} alt={book.title}/>
-          </div>
-          <div className='mx-auto pl-2'>
-            <h3 className='text-2xl font-semibold animate__animated animate__slideInLeft'>{book.title}</h3>
-            <h4 className='text-xl font-medium animate__animated animate__slideInLeft'>{book.author}</h4>
-            <div className='flex gap-10 mt-5'>
-              <button className='text-white btn bg-green-500 px-5 animate__animated animate__pulse animate__infinite'>Borrow Now</button>
-              <Link href={`/bookdetails/${book.id}`} className='text-white btn bg-amber-400 px-5 animate__animated animate__pulse animate__infinite'>Read More</Link>
+
+    return (
+        <div >
+            <div className='container mx-auto flex flex-col lg:flex-row justify-between items-center'>
+                <SearchSection books={books} setDisplayBooks={setDisplayBooks} ></SearchSection>
+                <FilterBooksByCategory setDisplayBooks={setDisplayBooks} books={books}></FilterBooksByCategory>
             </div>
-          </div>
-        </div>)
-        ) : (<div className="col-span-full flex flex-col items-center justify-center py-20 text-center">
-        <div className="text-6xl mb-4">🔍</div>
-        <h2 className="text-3xl font-bold text-gray-700">No Books Found</h2>
-        <p className="text-gray-500 mt-2 text-lg ">
-            We couldn't find any books matching your search. <br />
-            Please try using different keywords or check your spelling.
-        </p>
-        <button 
-            onClick={() => setDisplayBooks(getAllBooks())} 
-            className="btn btn-outline btn-neutral mt-6 animate__animated animate__pulse animate__infinite"
-        >
-            Clear Search & Show All
-        </button>
-    </div>)
-      }
-     </div>
-      
-    </div>
-  )
+
+            <div className='container mx-auto mt-15 grid p-4 lg:p-1 grid-cols-1 md:grid-cols-3 gap-5 space-y-6 animate__animated animate__fadeInUp animate__fast'>
+                {
+                    displayBooks.length > 0 ? (
+                        displayBooks.map((book, ind) => <div className='space-y-4' key={ind}>
+
+                            <div className='w-[350px] bg-blue-100 rounded-2xl border border-gray-200'>
+                                <Image className='mx-auto rounded h-[300px] p-5 animate__animated animate__zoomIn' src={book.image_url} width={200} height={300} alt={book.title} />
+                            </div>
+                            <div className='mx-auto pl-2'>
+                                <h3 className='text-2xl font-semibold animate__animated animate__slideInLeft'>{book.title}</h3>
+                                <h4 className='text-xl font-medium animate__animated animate__slideInLeft'>{book.author}</h4>
+                                <div className='flex gap-10 mt-5'>
+                                    <div className=" flex gap-2 btn bg-green-400 text-white px-3 animate__animated animate__pulse animate__infinite">
+                                        <IoCartOutline size={22} className="text-white my-auto" />
+                                        <span className=" text-white  ">Borrow Now</span>
+
+
+                                    </div>
+                                    <Link href={`/bookdetails/${book.id}`} className='text-white btn bg-amber-400 px-5 animate__animated animate__pulse animate__infinite flex gap-2' >
+                                        <FiBookOpen size={20} className="text-white my-auto" />
+
+                                    <button  >Read More</button>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>)
+                    ) : (<div className="col-span-full flex flex-col items-center justify-center py-20 text-center">
+                        <div className="text-6xl mb-4">🔍</div>
+                        <h2 className="text-3xl font-bold text-gray-700">No Books Found</h2>
+                        <p className="text-gray-500 mt-2 text-lg ">
+                            We couldn't find any books matching your search. <br />
+                            Please try using different keywords or check your spelling.
+                        </p>
+                        <button
+                            onClick={() => setDisplayBooks(getAllBooks())}
+                            className="btn btn-outline btn-neutral mt-6 animate__animated animate__pulse animate__infinite"
+                        >
+                            Clear Search & Show All
+                        </button>
+                    </div>)
+                }
+            </div>
+
+        </div>
+    )
 }
 
 export default AllBooksPage

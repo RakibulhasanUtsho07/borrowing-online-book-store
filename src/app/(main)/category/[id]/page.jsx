@@ -250,21 +250,23 @@ async function DivideByCategory(props) {
   }
 ]
   const params = await props.params
-  const id = params.id
-  console.log(id, "params")
+  const id =  params.id
+  // const categoryName =  params.category_name
+  // console.log(categoryName,id, "Rakib Category")
   return (
-    <div className="grid grid-cols-12 container gap-8 mx-auto mt-10 text-left justify-between py-10">
-      <div className="  col-span-3 sticky top-10 h-fit">
+    <div className='bg-gray-50 min-h-screen'>
+      <div className="grid grid-cols-1 md:grid-cols-12  container md:gap-8 mx-auto px-4 mt-5 md:mt-10 py-10">
+      <div className="md:col-span-3  lg:sticky lg:top-10 h-fit">
         <h3 className="text-2xl font-bold mb-5 animate__animated animate__bounce animate__delay-2s">All Category</h3>
         <BooksCategory activeId={id}></BooksCategory>
 
       </div>
-      <div className="col-span-6  ">
+      <div className="md:col-span-6  ">
         <h3 className="text-2xl font-bold mb-5 animate__animated animate__bounce animate__delay-2s">Borrowing Books</h3>
         <BorrowingBooks id={id}></BorrowingBooks>
 
       </div>
-      <div className="col-span-3 p-2  sticky top-10 h-fit ">
+      <div className="md:col-span-3 p-2  sticky top-10 h-fit ">
         <div className=''>
           <h3 className="text-2xl  font-bold mb-5 ">Social Login</h3>
         <LoginSection ></LoginSection>
@@ -276,6 +278,7 @@ async function DivideByCategory(props) {
         </div>
 
       </div>
+    </div>
     </div>
   )
 }

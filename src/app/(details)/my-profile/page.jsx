@@ -35,8 +35,8 @@ export default function UpdateProfile() {
     <div className=' mt-10 p-3 container mx-auto'>
        <div className=' flex flex-col justify-center'>
         <Image className='rounded-full mb-3 border border-2 border-black w-[250px] h-[250px] mx-auto' src={user?.image || userAvatar} width={250} height={250} alt={user?.name || "User Profile"} />
-        <p className='text-2xl font-semibold text-center'>{user?.name || "Guaist Name"}</p>
-        
+        <p className='text-2xl font-semibold text-center'>{user?.name || "Guest Account"}</p>
+        <p>Rakib</p>
        <button onClick={()=>setIsEditing(true)} className="btn bg-green-500 px-6 rounded-2xl mt-10 text-white mx-auto "> Update Profile</button>
       </div>  
       {

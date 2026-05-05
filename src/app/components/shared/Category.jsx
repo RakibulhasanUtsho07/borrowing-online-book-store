@@ -4,7 +4,7 @@ import React from 'react'
 function BooksCategory({activeId}) {
   console.log(activeId, "category")
   const currentActiveId = activeId ? Number(activeId) : 1
-  const categories =  [
+const categories =  [
   {
     "id": 1,
     "category_name": "Story"
@@ -45,7 +45,9 @@ function BooksCategory({activeId}) {
     "id": 10,
     "category_name": "Horror"
   }
+ 
 ]
+
   return (
     <div className='space-y-3 animate__animated animate__fadeInLeft'>
        {
