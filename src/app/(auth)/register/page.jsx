@@ -8,10 +8,7 @@ function RegisterPage() {
   const { register, handleSubmit, formState: { errors } } = useForm()
   const handleRegistration = async (data) => {
     const {email, name, photo, password}  = data;
-    // e.preventDefault()
-    // const email = e.target.email.value
-    // const password = e.target.password.value
-    // console.log(email, password)
+    
     console.log(data, "data")
     const {data:res , error } = await authClient.signUp.email({
       name: name, // required
@@ -32,7 +29,7 @@ function RegisterPage() {
   }
 
   return (
-    <div className=' container max-h-[80vh] mx-auto flex justify-center items-center bg-slate-200 mt-10 rounded-2xl p-55'>
+    <div className=' container max-h-[80vh] mx-auto flex justify-center items-center bg-slate-200 mt-10 rounded-2xlp-20 md:p-55'>
       <div className='p-10 rounded-xl  bg-white space-y-3'>
         <h3 className='text-2xl font-medium text-center'>Register your account</h3>
         <form onSubmit={handleSubmit(handleRegistration)}>
