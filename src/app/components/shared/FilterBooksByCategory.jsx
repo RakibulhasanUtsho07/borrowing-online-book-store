@@ -60,7 +60,7 @@ const handleFilter = (categoryName)=>{
                 <div tabIndex={0} role="button" className="btn m-1  btn-outline px-8 p-3 mr-10">Filter Books ⬇️</div>
                 <ul tabIndex="-1" className="dropdown-content menu bg-green-100 rounded-box z-1 w-52 p-2 shadow-sm">
                     {
-                        categories.map((category, ind) => <li onClick={()=> handleFilter(category.category_name)} className=' font-medium text-xl p-2 border-b border-purple-300' key={ind}>{category.category_name}</li>)
+                        categories.map((category, ind) => <li onClick={()=> handleFilter(category.category_name)} className=' cursor-pointer font-medium text-xl p-2 border-b border-purple-300' key={ind}>{category.category_name}</li>)
                     }
                 </ul>
             </div>
